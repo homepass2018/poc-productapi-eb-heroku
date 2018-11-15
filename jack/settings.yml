@@ -1,0 +1,3 @@
+create:
+  keyname: aws-eb
+  platform: "64bit Amazon Linux 2018.03 v4.6.0 running Node.js"

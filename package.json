@@ -1,0 +1,18 @@
+{
+  "name": "fastify-mongodb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "“Peter <“peter.cosemans@gmail.com”>",
+  "license": "ISC",
+  "dependencies": {
+    "fastify": "^1.13.0",
+    "long": "^4.0.0",
+    "monk": "^6.0.6",
+    "uglify-es": "^3.3.9"
+  }
+}
