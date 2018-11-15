@@ -2,7 +2,6 @@ const app = require('fastify')()
 const db = require('./db')
 const productMapper = require('./productMapper');
 
-const port = process.env.PORT || 3000;
 
 // Declare a route
 app.get('/api/products', async (request, reply) => {
@@ -17,14 +16,17 @@ app.get('/api/products/:id', async (req, res) => {
 });
 
 // Run the server!
+const port = process.env.PORT || 3000;
+const host = process.env.HOST || '0.0.0.0';
+
 const start = async () => {
   try {
     db.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/shop').then(() =>  {
       console.log('connected')
     })
     db.bind('products')
-    await app.listen(port)
-    console.info(`server listening on ${app.server.address().port}`)
+    await app.listen(port, host)
+    console.info(`server listening on ${app.server.address().port}: ${port}`)
   } catch (err) {
     console.error(err)
     process.exit(1)
